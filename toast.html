@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Cyber Alerts</title>
+    <style>
+        body { background: #030508; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .toast-area { position: absolute; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 10px; }
+        .toast { background: #0d1117; color: #56d364; padding: 15px 30px; border: 1px solid #238636; border-radius: 8px; font-family: sans-serif; box-shadow: 0 0 15px rgba(35,134,54,0.3); animation: slide 0.3s ease; }
+        @keyframes slide { from { transform: translateX(100%); } to { transform: translateX(0); } }
+        button { padding: 12px 24px; background: #58a6ff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
+    </style>
+</head>
+<body>
+<button onclick="showToast()">XABAR YUBORISH</button>
+<div class="toast-area" id="area"></div>
+<script>
+    function showToast() {
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.innerText = '🚀 Tizim: Fayl muvaffaqiyatli yuklandi!';
+        document.getElementById('area').appendChild(toast);
+        setTimeout(() => toast.remove(), 3000);
+    }
+</script>
+</body>
+</html>
